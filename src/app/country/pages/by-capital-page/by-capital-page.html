@@ -1,0 +1,6 @@
+<search-structure (value)="onSearch($event)" placeHolder="capital" />
+@if (isLoading()) {
+<span class="loading loading-bars loading-xl"></span>
+} @if (hasError()) {
+<span>{{ hasError() }}</span>
+}

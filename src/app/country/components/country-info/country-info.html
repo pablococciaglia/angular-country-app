@@ -1,0 +1,24 @@
+<section>
+  <h2>Country Information</h2>
+  <p><strong>Name:</strong> {{ country().name }}</p>
+  <p><strong>Capital:</strong> {{ country().capital }}</p>
+  <p><strong>Population:</strong> {{ country().population | number }}</p>
+  <p><strong>Region:</strong> {{ country().region }}</p>
+
+  <strong>Languages:</strong>
+  <br />
+
+  <ul>
+    @for ( language of languages(); track language) {
+    <li>{{ language }}</li>
+    }
+  </ul>
+
+  <p><strong>timezones:</strong></p>
+
+  <ul>
+    @for ( language of languages(); track language) {
+    <li>{{ timezone() }}</li>
+    }
+  </ul>
+</section>

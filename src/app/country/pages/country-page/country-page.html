@@ -1,0 +1,16 @@
+<!-- Not found -->
+@if(countryResource.error()) {
+<error-and-go-back />
+}
+<!-- Loading State -->
+@if(countryResource.isLoading()) {
+<div class="d-flex justify-content-center mt-4">
+  <div class="spinner-border" role="status">
+    <span class="loading loading-bars loading-xl"></span>
+  </div>
+</div>
+}
+<!-- Country Info -->
+@if(countryResource.hasValue()) {
+<country-info [country]="countryResource.value()" />
+}

@@ -1,0 +1,37 @@
+<div class="overflow-x-auto">
+  <table class="table table-zebra">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Icon</th>
+        <th>Flag</th>
+        <th>Name</th>
+        <th>Capital</th>
+        <th>Polulation</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (country of countries(); track country.cca2; let index = $index) {
+      <tr>
+        <th>{{ index + 1 }}</th>
+        <td>{{ country.flag }}</td>
+        <td><img [src]="country.flagSVG" [alt]="country.name" class="w-10" /></td>
+        <td>{{ country.name }}</td>
+        <td>{{ country.capital }}</td>
+        <td>
+          <span class="badge badge-secondary">
+            {{ country.population | number }}
+          </span>
+        </td>
+        <td>
+          <a class="link-primary cursor-pointer" [routerLink]="['/country/by', country.cca2]"
+            >More info</a
+          >
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

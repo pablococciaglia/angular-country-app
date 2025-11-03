@@ -1,0 +1,16 @@
+<section class="flex flex-row gap-2 mt-2">
+  <input
+    type="text"
+    class="input inputbordered mr-2 w-56"
+    placeholder="Search by {{ placeHolder() }}"
+    autofocus
+    (keyup.enter)="value.emit(inputText.value)"
+    (keyup)="importValue.set(inputText.value)"
+    #inputText
+  />
+  <button class="btn btn-primary" (click)="value.emit(inputText.value)">Search</button>
+</section>
+
+<section>
+  <search-table />
+</section>

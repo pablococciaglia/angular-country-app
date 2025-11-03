@@ -1,0 +1,12 @@
+<ul class="menu bg-base-200 sm:menu-horizontal rounded-box">
+  @for ( region of regions; track region) {
+  <li>
+    <a
+      (click)="getSelectedRegion(region)"
+      class="btn"
+      [class.btn-primary]="queryParamRegion() === region"
+      >{{ region }}
+    </a>
+  </li>
+  }
+</ul>
